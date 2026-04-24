@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Часы и будильник</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/alarm.css">
+    <link rel="stylesheet" href="css/timer.css">
+    <link rel="stylesheet" href="css/stopwatch.css">
+    <link rel="stylesheet" href="css/world.css">
+</head>
+<body>
+    <div class="container">
+        <div class="clock-section">
+            <div class="digital-clock" id="digitalClock">00:00:00</div>
+            <div class="day-display" id="dayDisplay"></div>
+            <div class="date-display" id="dateDisplay"></div>
+        </div>
+
+        <nav class="nav-tabs">
+            <button class="nav-btn active" data-tab="alarm">Будильник</button>
+            <button class="nav-btn" data-tab="timer">Таймер</button>
+            <button class="nav-btn" data-tab="stopwatch">Секундомер</button>
+            <button class="nav-btn" data-tab="world">Мир</button>
+        </nav>
+
+        <div class="tab-content active" id="alarm">
+            <div class="alarm-form">
+                <div class="time-inputs">
+                    <select id="alarmHours"></select>
+                    <span>:</span>
+                    <select id="alarmMinutes"></select>
+                </div>
+                <button id="addAlarm" class="btn-primary">Добавить</button>
+            </div>
+            <div class="alarms-list" id="alarmsList"></div>
+        </div>
+
+        <div class="tab-content" id="timer">
+            <div class="timer-display" id="timerDisplay">00:01:00</div>
+            <div class="timer-inputs">
+                <input type="number" id="timerHours" min="0" max="23" value="0">
+                <span>:</span>
+                <input type="number" id="timerMinutes" min="0" max="59" value="1">
+                <span>:</span>
+                <input type="number" id="timerSeconds" min="0" max="59" value="0">
+            </div>
+            <div class="timer-controls">
+                <button id="startTimer" class="btn-primary">Старт</button>
+                <button id="pauseTimer" class="btn-secondary" disabled>Пауза</button>
+                <button id="resetTimer" class="btn-danger">Сброс</button>
+            </div>
+            <div class="slider-container">
+                <input type="range" id="timerSlider" min="1" max="86400" value="60">
+                <span id="timerValue">00:01</span>
+            </div>
+        </div>
+
+        <div class="tab-content" id="stopwatch">
+            <div class="stopwatch-display" id="stopwatchDisplay">00:00:00</div>
+            <div class="stopwatch-controls">
+                <button id="startStopwatch" class="btn-primary">Старт</button>
+                <button id="lapStopwatch" class="btn-secondary" disabled>Круг</button>
+                <button id="resetStopwatch" class="btn-danger">Сброс</button>
+            </div>
+            <div class="laps-container">
+                <div class="laps-header">
+                    <span>Круг</span>
+                    <span>Время</span>
+                    <span>Общее</span>
+                </div>
+                <div class="laps-list" id="lapsList"></div>
+            </div>
+        </div>
+
+        <div class="tab-content" id="world">
+            <div class="world-grid" id="worldGrid"></div>
+        </div>
+
+        <div class="alarm-active" id="activeAlarm">
+            <div class="alarm-message">Будильник сработал!</div>
+            <button id="stopAlarm" class="btn-danger">Выключить</button>
+        </div>
+    </div>
+
+    <audio id="alarmAudio" preload="auto" loop>
+        <source src="sounds/alarm.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

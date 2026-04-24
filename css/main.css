@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0f2444 0%, #1a3a6b 100%);
+    min-height: 100vh;
+    color: #333;
+}
+
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.clock-section {
+    text-align: center;
+    margin-bottom: 28px;
+    color: #fff;
+}
+
+.digital-clock {
+    font-size: 4rem;
+    font-weight: 300;
+    margin-bottom: 6px;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+    letter-spacing: 2px;
+}
+
+.day-display {
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    opacity: 0.95;
+    margin-bottom: 4px;
+}
+
+.date-display {
+    font-size: 1rem;
+    opacity: 0.75;
+}
+
+.nav-tabs {
+    display: flex;
+    background: rgba(255,255,255,0.95);
+    border-radius: 14px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+
+.nav-btn {
+    flex: 1;
+    padding: 14px 8px;
+    border: none;
+    background: transparent;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #444;
+}
+
+.nav-btn.active {
+    background: linear-gradient(45deg, #1a3a6b, #2563c0);
+    color: #fff;
+}
+
+.tab-content {
+    display: none;
+    background: rgba(255,255,255,0.96);
+    border-radius: 18px;
+    padding: 28px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #1a3a6b, #2563c0);
+    color: #fff;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+}
+
+.btn-secondary,
+.btn-danger {
+    padding: 12px 22px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin: 0 5px;
+}
+
+.btn-secondary {
+    background: #6c757d;
+    color: #fff;
+}
+
+.btn-danger {
+    background: #dc3545;
+    color: #fff;
+}

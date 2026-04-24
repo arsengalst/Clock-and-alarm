@@ -1,0 +1,114 @@
+.alarm-form {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    margin-bottom: 28px;
+    flex-wrap: wrap;
+}
+
+.time-inputs {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    padding: 10px 18px;
+    border-radius: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.time-inputs select {
+    border: none;
+    font-size: 1.9rem;
+    width: 76px;
+    background: transparent;
+    outline: none;
+    color: #222;
+}
+
+.time-inputs span {
+    font-size: 1.9rem;
+    font-weight: bold;
+    color: #2563c0;
+    padding: 0 8px;
+}
+
+.alarms-list {
+    max-height: 380px;
+    overflow-y: auto;
+}
+
+.alarm-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px;
+    margin-bottom: 10px;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+}
+
+.alarm-item.active {
+    background: linear-gradient(45deg, #1a3a6b, #2563c0);
+    color: #fff;
+}
+
+.alarm-item.inactive {
+    opacity: 0.55;
+}
+
+.alarm-time {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.alarm-status {
+    font-size: 0.85rem;
+    opacity: 0.85;
+}
+
+.alarm-actions button {
+    padding: 8px;
+    margin-left: 8px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    width: 38px;
+    height: 38px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.25);
+    transition: all 0.2s;
+}
+
+.alarm-actions button:hover {
+    transform: scale(1.1);
+}
+
+.alarm-active {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    z-index: 1000;
+    text-align: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.alarm-active.show {
+    display: flex;
+}
+
+.alarm-message {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #1a3a6b;
+}
